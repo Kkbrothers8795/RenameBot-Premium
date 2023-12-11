@@ -21,20 +21,21 @@ async def warn(c, m):
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.command(["addpremium"]))
 async def buypremium(bot, message):
 	await message.reply_text("Select Plan.........",quote=True,reply_markup=InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("VIP 1",callback_data = "vip1"), 
-        			InlineKeyboardButton("VIP 2",callback_data = "vip2") ]]))
+        			InlineKeyboardButton("VIP 1",callback_data = "vip1"),
+		                InlineKeyboardButton("VIP 2",callback_data = "vip2"),
+        			InlineKeyboardButton("VIP 3",callback_data = "vip3") ]]))
         			
 
 @Client.on_callback_query(filters.regex('vip1'))
 async def vip1(bot,update):
 	id = update.message.reply_to_message.text.split("/addpremium")
 	user_id = id[1].replace(" ", "")
-	inlimit  = 10737418240
-	uploadlimit(int(user_id),10737418240)
+	inlimit  = 20737418240
+	uploadlimit(int(user_id),20737418240)
 	usertype(int(user_id),"VIP1")
 	addpre(int(user_id))
-	await update.message.edit("Added successfully To Premium Upload limit 10 GB")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 1 check your plan here /myplan")
+	await update.message.edit("Added successfully To Premium Upload limit 20 GB")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 1 check your plan here /usage")
 
 @Client.on_callback_query(filters.regex('vip2'))
 async def vip2(bot,update):
@@ -45,4 +46,15 @@ async def vip2(bot,update):
 	usertype(int(user_id),"VIP2")
 	addpre(int(user_id))
 	await update.message.edit("Added successfully To Premium Upload limit 50 GB")
-	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 2 check your plan here /myplan")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 2 check your plan here /usage")
+
+@Client.on_callback_query(filters.regex('vip3'))
+async def vip2(bot,update):
+	id = update.message.reply_to_message.text.split("/addpremium")
+	user_id = id[1].replace(" ", "")
+	inlimit  = 1,00,00,00,00,00,000
+	uploadlimit(int(user_id),1,00,00,00,00,00,000)
+	usertype(int(user_id),"VIP3")
+	addpre(int(user_id))
+	await update.message.edit("Added successfully To Premium Upload limit 10,000 GB")
+	await bot.send_message(user_id,"Hey Ur Upgraded To VIP 3 check your plan here /usage")
