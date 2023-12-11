@@ -42,8 +42,8 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/WebXBots") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@Divin_Dass") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/HxSupport") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@HxBots") ]  ]))
 	    return
 	if id:
 	    if old == True:
@@ -55,15 +55,15 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/WebXBots") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@Divin_Dass") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/HxSupport") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@HxBots") ]  ]))
 	        except:
 	             return
 	    else:
-	         await client.send_message(id,"Congrats! You Won 100MB Upload limit")
+	         await client.send_message(id,"Congrats! You Won 500MB Upload limit")
 	         _user_= find_one(int(id))
 	         limit = _user_["uploadlimit"]
-	         new_limit = limit + 104857600
+	         new_limit = limit + 50,48,57,600
 	         uploadlimit(int(id),new_limit)
 	         await message.reply_text(text =f"""
 	Hello {wish} {message.from_user.first_name }
@@ -71,8 +71,8 @@ async def start(client,message):
 	**Document Or Video** and enter new filename to rename it__
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/WebXBots") ], 
-	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@Divin_Dass") ]  ]))
+	 [[ InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/HxSupport") ], 
+	[InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/@HxBots") ]  ]))
 	         
 
 
