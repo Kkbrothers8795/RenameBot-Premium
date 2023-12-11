@@ -11,7 +11,7 @@ from helper.database import daily as daily_
 from helper.date import check_expi
 from helper.database import uploadlimit , usertype
 
-@Client.on_message(filters.private & filters.command(["myplan"]))
+@Client.on_message(filters.private & filters.command(["usage"]))
 async def start(client,message):
 	used_ = find_one(message.from_user.id)	
 	daily = used_["daily"]
@@ -31,7 +31,7 @@ async def start(client,message):
 	if ends:
 	    pre_check = check_expi(ends)
 	    if pre_check == False:
-	        uploadlimit(message.from_user.id,2147483648)
+	        uploadlimit(message.from_user.id,5000000000)
 	        usertype(message.from_user.id,"Free")
 	if ends == None:
 	    text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}"
