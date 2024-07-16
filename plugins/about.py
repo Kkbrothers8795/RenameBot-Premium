@@ -1,6 +1,6 @@
 import os 
 from pyrogram import Client, filters
-token = os.environ.get('TOKEN','')
+token = '1616277647:AAEWHjijdk-GNkPMxQjOcwqDYtM8Y0b4YSA'
 botid = token.split(':')[0]
 from helper.database import botdata, find_one, total_user
 from helper.progress import humanbytes
